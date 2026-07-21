@@ -93,7 +93,7 @@ def countdown(x, y, now):
     """T-H:MM:SS to the next 6h cron boundary, ticking in real time."""
     period = 6 * 3600
     day_s = now.hour * 3600 + now.minute * 60 + now.second
-    r0 = period - (day_s % period) + 0.5  # half-step off the SMIL boundaries so each digit centers on its second
+    r0 = period - ((day_s + 0.5) % period)  # half-step off the SMIL boundaries; keeps r0 in (0, period]
     wheels = [  # (offset_x, digit sequence, own period)
         (0, "543210", period),
         (24, "543210", 3600),
