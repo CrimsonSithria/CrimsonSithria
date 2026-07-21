@@ -31,7 +31,8 @@ jobs:
           fi
       - name: generate panels
         env:
-          GH_TOKEN: ${{ secrets.TELEMETRY_TOKEN || secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.TELEMETRY_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python3 scripts/telemetry.py
       - name: commit if changed
         run: |

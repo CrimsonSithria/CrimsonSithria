@@ -9,7 +9,10 @@ import urllib.request
 
 LOGIN = "CrimsonSithria"
 ROOT = os.path.join(os.path.dirname(__file__), "..", "assets")
-TOKEN = os.environ.get("GH_TOKEN") or os.environ.get("GITHUB_TOKEN")
+# GraphQL rejects fine-grained PATs (401), while the default Actions token reads the
+# owner's full contribution calendar; REST search needs the PAT to see private PRs.
+TOKEN_GRAPHQL = os.environ.get("GITHUB_TOKEN") or os.environ.get("GH_TOKEN")
+TOKEN_REST = os.environ.get("GH_TOKEN") or os.environ.get("GITHUB_TOKEN")
 
 QUERY = """
 query($login: String!) {
@@ -28,7 +31,8 @@ query($login: String!) {
 
 
 def api(url, payload=None):
-    headers = {"Authorization": f"bearer {TOKEN}", "Accept": "application/vnd.github+json"}
+    token = TOKEN_GRAPHQL if url.endswith("/graphql") else TOKEN_REST
+    headers = {"Authorization": f"bearer {token.strip()}", "Accept": "application/vnd.github+json"}
     data = None
     if payload is not None:
         data = json.dumps(payload).encode()
@@ -203,7 +207,7 @@ def render_status(now):
 
 
 def main():
-    if not TOKEN:
+    if not TOKEN_GRAPHQL:
         sys.exit("no GH_TOKEN / GITHUB_TOKEN in environment")
     now = datetime.datetime.now(datetime.timezone.utc)
     try:
