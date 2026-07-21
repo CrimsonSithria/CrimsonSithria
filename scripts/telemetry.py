@@ -58,7 +58,8 @@ def fetch():
 
     try:
         open_prs = api(f"https://api.github.com/search/issues?q=author:{LOGIN}+type:pr+state:open")["total_count"]
-    except Exception:
+    except Exception as e:
+        print(f"::warning title=pr search failed::{e}")
         open_prs = None
 
     return {
