@@ -1,7 +1,7 @@
 <div align="center">
   <picture>
     <source media="(prefers-color-scheme: light)" srcset="assets/hero-light.svg">
-    <img src="assets/hero-dark.svg" alt="crimsonsithria — the sky that holds the dawn" width="100%">
+    <img src="assets/hero-dark.svg" alt="crimsonsithria — last letter, first light" width="100%">
   </picture>
 
   <img src="assets/telemetry.svg" alt="OSIRIS fleet telemetry — live counters, regenerated every six hours" width="100%">
