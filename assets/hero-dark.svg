@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 340" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" role="img" aria-label="crimsonsithria — the sky that holds the dawn">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#030107"/>
+      <stop offset=".55" stop-color="#140310"/>
+      <stop offset=".85" stop-color="#320813"/>
+      <stop offset="1" stop-color="#571020"/>
+    </linearGradient>
+    <linearGradient id="ground" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1d0511"/>
+      <stop offset="1" stop-color="#040108"/>
+    </linearGradient>
+    <radialGradient id="glow">
+      <stop offset="0" stop-color="#ff2a4d" stop-opacity=".85"/>
+      <stop offset=".4" stop-color="#ff2a4d" stop-opacity=".32"/>
+      <stop offset="1" stop-color="#ff2a4d" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="sun" cx=".5" cy=".35" r=".75">
+      <stop offset="0" stop-color="#ff8fa0"/>
+      <stop offset=".55" stop-color="#ff3b5c"/>
+      <stop offset="1" stop-color="#c40f33"/>
+    </radialGradient>
+    <clipPath id="typeclip"><rect x="64" y="140" width="0" height="22">
+      <animate attributeName="width" calcMode="discrete" fill="freeze" begin="1.2s" dur="2.8s"
+        values="0;24;47;71;95;118;142;166;190;213;237;261;284;308;330"/>
+    </rect></clipPath>
+  </defs>
+  <style>
+    @keyframes tw{0%,100%{opacity:.12}50%{opacity:.95}}
+    .s{fill:#fff;animation:tw 4.5s ease-in-out infinite}
+    .o{fill:#ffb3c0;animation:tw 6s ease-in-out infinite}
+    @keyframes pulse{0%,100%{opacity:.45}50%{opacity:.95}}
+    .glow{animation:pulse 7s ease-in-out infinite}
+    @keyframes scan{from{transform:translateY(-20px)}to{transform:translateY(360px)}}
+    .scan{animation:scan 11s linear infinite}
+  </style>
+
+  <rect width="1000" height="340" fill="url(#sky)"/>
+
+  <!-- starfield -->
+  <g>
+    <circle class="s" cx="52"  cy="38"  r="1.1" style="animation-delay:-.4s"/>
+    <circle class="s" cx="118" cy="72"  r=".8"  style="animation-delay:-2.1s"/>
+    <circle class="s" cx="176" cy="30"  r="1.3" style="animation-delay:-3.4s"/>
+    <circle class="s" cx="238" cy="94"  r=".7"  style="animation-delay:-1.2s"/>
+    <circle class="s" cx="296" cy="48"  r="1"   style="animation-delay:-4.1s"/>
+    <circle class="s" cx="352" cy="118" r=".8"  style="animation-delay:-.9s"/>
+    <circle class="s" cx="401" cy="26"  r="1.2" style="animation-delay:-2.8s"/>
+    <circle class="s" cx="447" cy="76"  r=".7"  style="animation-delay:-3.9s"/>
+    <circle class="s" cx="493" cy="41"  r="1"   style="animation-delay:-1.7s"/>
+    <circle class="s" cx="529" cy="132" r=".8"  style="animation-delay:-.2s"/>
+    <circle class="s" cx="561" cy="64"  r="1.2" style="animation-delay:-2.4s"/>
+    <circle class="s" cx="602" cy="24"  r=".9"  style="animation-delay:-4.4s"/>
+    <circle class="s" cx="633" cy="150" r=".7"  style="animation-delay:-1s"/>
+    <circle class="s" cx="662" cy="96"  r=".8"  style="animation-delay:-3.1s"/>
+    <circle class="s" cx="822" cy="34"  r="1.2" style="animation-delay:-.6s"/>
+    <circle class="s" cx="861" cy="118" r=".8"  style="animation-delay:-2.6s"/>
+    <circle class="s" cx="899" cy="66"  r="1"   style="animation-delay:-4s"/>
+    <circle class="s" cx="936" cy="150" r=".7"  style="animation-delay:-1.5s"/>
+    <circle class="s" cx="963" cy="27"  r="1.1" style="animation-delay:-3.6s"/>
+    <circle class="s" cx="82"  cy="140" r=".8"  style="animation-delay:-2.9s"/>
+    <circle class="s" cx="145" cy="182" r=".7"  style="animation-delay:-.8s"/>
+    <circle class="s" cx="586" cy="184" r=".7"  style="animation-delay:-3.3s"/>
+    <circle class="s" cx="678" cy="205" r=".8"  style="animation-delay:-1.9s"/>
+    <circle class="s" cx="905" cy="196" r=".8"  style="animation-delay:-4.6s"/>
+    <circle class="s" cx="957" cy="228" r=".7"  style="animation-delay:-2.2s"/>
+    <circle class="s" cx="510" cy="205" r=".7"  style="animation-delay:-.5s"/>
+    <circle class="s" cx="420" cy="160" r=".8"  style="animation-delay:-3.7s"/>
+  </g>
+
+  <!-- the constellation: an omega, a bar held above -->
+  <g opacity=".8">
+    <polyline points="702,140 716,140 712,126 704,104 708,84 722,70 740,65 758,70 772,84 776,104 768,126 764,140 778,140"
+      fill="none" stroke="#ff6b81" stroke-width=".7" opacity=".14"/>
+    <line x1="722" y1="42" x2="758" y2="42" stroke="#ff6b81" stroke-width=".7" opacity=".2"/>
+    <circle class="o" cx="716" cy="140" r="1.5" style="animation-delay:-1s"/>
+    <circle class="o" cx="704" cy="104" r="1.4" style="animation-delay:-2.5s"/>
+    <circle class="o" cx="722" cy="70"  r="1.5" style="animation-delay:-4s"/>
+    <circle class="o" cx="740" cy="65"  r="1.7" style="animation-delay:-.7s"/>
+    <circle class="o" cx="758" cy="70"  r="1.5" style="animation-delay:-3.2s"/>
+    <circle class="o" cx="776" cy="104" r="1.4" style="animation-delay:-1.8s"/>
+    <circle class="o" cx="764" cy="140" r="1.5" style="animation-delay:-5s"/>
+    <circle class="o" cx="722" cy="42"  r="1.6" style="animation-delay:-2s"/>
+    <circle class="o" cx="740" cy="42"  r="1.4" style="animation-delay:-3.8s"/>
+    <circle class="o" cx="758" cy="42"  r="1.6" style="animation-delay:-.3s"/>
+  </g>
+
+  <!-- the dawn -->
+  <circle class="glow" cx="270" cy="255" r="140" fill="url(#glow)"/>
+  <circle cx="270" cy="278" r="60" fill="url(#sun)"/>
+
+  <!-- the horizon that contains it -->
+  <rect y="250" width="1000" height="90" fill="url(#ground)"/>
+  <rect y="248.5" width="1000" height="2" fill="#ff3355" opacity=".5"/>
+  <line x1="0" y1="264" x2="1000" y2="264" stroke="#ff2a4d" opacity=".07"/>
+  <line x1="0" y1="282" x2="1000" y2="282" stroke="#ff2a4d" opacity=".055"/>
+  <line x1="0" y1="305" x2="1000" y2="305" stroke="#ff2a4d" opacity=".04"/>
+  <line x1="0" y1="330" x2="1000" y2="330" stroke="#ff2a4d" opacity=".03"/>
+
+  <rect class="scan" width="1000" height="4" fill="#ffffff" opacity=".04"/>
+
+  <text x="64" y="118" font-size="34" letter-spacing="7" fill="#ffe4e8">crimsonsithria</text>
+  <g clip-path="url(#typeclip)">
+    <text x="64" y="157" font-size="14" letter-spacing="3" fill="#d08794">the sky that holds the dawn</text>
+  </g>
+</svg>

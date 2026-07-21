@@ -1,0 +1,45 @@
+name: telemetry
+
+on:
+  schedule:
+    - cron: "0 */6 * * *"
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - scripts/**
+      - .github/workflows/telemetry.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: telemetry
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: check token
+        env:
+          TELEMETRY_TOKEN: ${{ secrets.TELEMETRY_TOKEN }}
+        run: |
+          if [ -z "$TELEMETRY_TOKEN" ]; then
+            echo "::warning title=TELEMETRY_TOKEN missing::falling back to GITHUB_TOKEN — private contribution data will be invisible and panels may stop updating"
+          fi
+      - name: generate panels
+        env:
+          GH_TOKEN: ${{ secrets.TELEMETRY_TOKEN || secrets.GITHUB_TOKEN }}
+        run: python3 scripts/telemetry.py
+      - name: commit if changed
+        run: |
+          git config user.name "osiris-telemetry"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets
+          if ! git diff --cached --quiet; then
+            git commit -m "telemetry: sync $(date -u +'%Y-%m-%dT%H:%MZ')"
+            git pull --rebase -X ours origin main
+            git push
+          fi
