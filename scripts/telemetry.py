@@ -120,7 +120,7 @@ def render_telemetry(d, now):
         leader("CONTRIBUTIONS / 7D", d["last7"]),
         leader("CURRENT STREAK", f"{d['streak']} days"),
         leader("CONTRIBUTIONS / 365D", d["year_total"]),
-        leader("OPEN PRS / PUBLIC BAND", d["open_prs"] if d["open_prs"] is not None else "—"),
+        leader("OPEN PRS · HOME WATERS", d["open_prs"] if d["open_prs"] is not None else "—"),
         leader("SEALED TRAFFIC", "woven into counts" if d["sealed"] else "not broadcast"),
     ]
     lines = "\n".join(
