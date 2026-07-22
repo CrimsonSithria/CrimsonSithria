@@ -6,8 +6,8 @@
   </rect></clipPath>
   <g clip-path="url(#t36x40)"><text x="36" y="40" font-size="15" fill="#ffe4e8">$ osiris --status</text></g>
   <clipPath id="t36x68"><rect x="36" y="53" width="0" height="22">
-    <animate attributeName="width" calcMode="discrete" fill="freeze" begin="2.0s" dur="1.44s" values="0.0;9.3;18.6;27.9;37.2;46.5;55.8;65.1;74.4;83.7;93.0;102.3;111.6;120.9;130.2;139.5;148.8;158.1;167.4;176.7;186.0;195.3;204.6;213.9;223.2;232.5;241.8"/>
+    <animate attributeName="width" calcMode="discrete" fill="freeze" begin="2.0s" dur="3.00s" values="0.0;9.3;18.6;27.9;37.2;46.5;55.8;65.1;74.4;83.7;93.0;102.3;111.6;120.9;130.2;139.5;148.8;158.1;167.4;176.7;186.0;195.3;204.6;213.9;223.2;232.5;241.8;251.1;260.4;269.7;279.0;288.3;297.6;306.9;316.2;325.5;334.8;344.1;353.4;362.7;372.0;381.3;390.6;399.9;409.2;418.5;427.8;437.1;446.4;455.7;465.0;474.3;483.6;492.9;502.2"/>
   </rect></clipPath>
-  <g clip-path="url(#t36x68)"><text x="36" y="68" font-size="15" fill="#c97f8d">&gt; uptime measured in dawns</text></g>
-  <text x="278" y="68" font-size="15" class="cur" fill="#ff5c72">█</text>
+  <g clip-path="url(#t36x68)"><text x="36" y="68" font-size="15" fill="#c97f8d">&gt; fleet nominal · memory persistent · the dawn is kept</text></g>
+  <text x="538" y="68" font-size="15" class="cur" fill="#ff5c72">█</text>
 </svg>
