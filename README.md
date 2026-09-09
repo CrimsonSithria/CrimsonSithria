@@ -17,6 +17,10 @@
 
 <br>
 
+<sub>⚙ <a href="https://github.com/CrimsonHorizon/crimson"><b>crimson</b></a> — the software factory, now open source</sub>
+
+<br>
+
 <sub>**physician-engineer** · medicine × autonomous systems</sub>
 
 <sub><em>the horizon is the sky that contains the dawn</em></sub>
